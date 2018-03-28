@@ -9,23 +9,28 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-@NgModule({
-  declarations: [
+@NgModule(
+{
+  declarations:
+  [
     MyApp,
     HomePage,
     ListPage
   ],
-  imports: [
+  imports:
+  [
     BrowserModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
-  entryComponents: [
+  entryComponents:
+  [
     MyApp,
     HomePage,
     ListPage
   ],
-  providers: [
+  providers:
+  [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
