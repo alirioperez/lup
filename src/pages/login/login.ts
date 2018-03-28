@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { HomePage } from '../../pages/home/home';
 
+import { LangServiceProvider } from '../../providers/lang-service/lang-service';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 // -----------------------------------------------------------------------------------------------------------------------------
@@ -20,7 +21,7 @@ export class LoginPage {
 
 	// -----------------------------------------------------------------------------------------------------------------------------
 	constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController,
-		private toastCtrl: ToastController, public auth: AuthServiceProvider)
+		private toastCtrl: ToastController, public auth: AuthServiceProvider, public lang: LangServiceProvider)
 	{
 	}
 
@@ -29,7 +30,7 @@ export class LoginPage {
 	{
 		this.presentLoading();
 
-		this.auth.authenticate('admin', '123456').then(
+		this.auth.authenticate(this.credentialsObject['un'], this.credentialsObject['pw']).then(
 		(successObject) =>
 		{
 			this.navCtrl.setRoot(HomePage);
@@ -43,17 +44,17 @@ export class LoginPage {
 		(errObject) =>
 		{
 			this.loader.dismiss();
-			this.presentToast(err);
-		}
-		);
+			this.presentToast(this.lang.getString('login.invalid.credentials', 'en'));
+		});
 	}
 
 	// -----------------------------------------------------------------------------------------------------------------------------
 	presentLoading()
 	{
+		self = this;
 		this.loader = this.loadingCtrl.create(
 		{
-			content : "Please wait..."
+			content : self.lang.getString('login.authenticating', 'en')
 		});
 
 		this.loader.present();

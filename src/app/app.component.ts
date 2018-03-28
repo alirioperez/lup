@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { ListPage } from '../pages/list/list';
 
+import { LangServiceProvider } from '../providers/lang-service/lang-service';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 // ------------------------------------------------------------------------------------------------------------------------------
@@ -22,7 +23,7 @@ export class MyApp
 
 	// -----------------------------------------------------------------------------------------------------------------------------
 	constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
-		public auth: AuthServiceProvider, public loadingCtrl : LoadingController)
+		public auth: AuthServiceProvider, public lang: LangServiceProvider, public loadingCtrl : LoadingController)
 	{
 		this.initializeApp();
 

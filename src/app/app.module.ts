@@ -13,6 +13,7 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { LangServiceProvider } from '../providers/lang-service/lang-service';
 
 @NgModule(
 {
@@ -43,7 +44,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpClientModule,
-	AuthServiceProvider
+	AuthServiceProvider,
+    LangServiceProvider
   ]
 })
 export class AppModule {}
