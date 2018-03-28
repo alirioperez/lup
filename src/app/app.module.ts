@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { TeamsPage } from '../pages/teams/teams';
 import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -21,6 +22,7 @@ import { LangServiceProvider } from '../providers/lang-service/lang-service';
   [
     MyApp,
     HomePage,
+	TeamsPage,
 	LoginPage,
     ListPage
   ],
@@ -35,6 +37,7 @@ import { LangServiceProvider } from '../providers/lang-service/lang-service';
   [
     MyApp,
     HomePage,
+	TeamsPage,
 	LoginPage,
     ListPage
   ],

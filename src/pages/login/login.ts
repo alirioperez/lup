@@ -51,10 +51,10 @@ export class LoginPage {
 	// -----------------------------------------------------------------------------------------------------------------------------
 	presentLoading()
 	{
-		self = this;
+		let thisOne = this;
 		this.loader = this.loadingCtrl.create(
 		{
-			content : self.lang.getString('login.authenticating', 'en')
+			content : thisOne.lang.getString('login.authenticating', 'en')
 		});
 
 		this.loader.present();

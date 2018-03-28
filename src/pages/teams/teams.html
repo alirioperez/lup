@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Teams</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+	  <button *ngFor="let team of teams" ion-button block (click)="openMenu()">
+		  <ion-icon [name]="team.icon" item-start></ion-icon>  {{team.name}}
+	  </button>
+  </ion-list>
+</ion-content>
