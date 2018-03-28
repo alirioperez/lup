@@ -1,9 +1,16 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+  <ion-navbar primary>
+	<ion-buttons start>
+    	<button ion-button menuToggle>
+      		<ion-icon name="menu"></ion-icon>
+    	</button>
+	</ion-buttons>
     <ion-title>Home</ion-title>
+	<ion-buttons end>
+		<button ion-button (click)="logout()">
+      		<ion-icon name="log-out"></ion-icon>
+    	</button>
+	</ion-buttons>
   </ion-navbar>
 </ion-header>
 
